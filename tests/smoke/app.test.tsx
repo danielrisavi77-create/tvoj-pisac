@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Home from "@/app/page";
+import Home from "@/app/(public)/page";
 
 it("renders product name", () => {
   render(<Home />);

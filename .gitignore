@@ -12,6 +12,10 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
+AGENTS.md
+CLAUDE.md
 
 # next.js
 /.next/
