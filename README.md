@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tvoj Pisac — Foundation
 
-## Getting Started
+Foundation je siguran Next.js skeleton za Tvoj Pisac. Početni UI je na hrvatskom i spreman za kasnije faze, ali ova faza ne povezuje produkcijske servise.
 
-First, run the development server:
+## Preduvjeti
+
+- Node.js i npm
+- Chromium za Playwright: `npx playwright install chromium`
+
+## Lokalni workflow
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Razvojni server je dostupan na `http://localhost:3000`. Za izolirani E2E smoke test koristi se `127.0.0.1:3210` kroz Playwright konfiguraciju.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Quality commands:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run typecheck
+npm test
+npm run build
+npm run test:e2e
+```
 
-## Learn More
+## Foundation scope
 
-To learn more about Next.js, take a look at the following resources:
+Implementirano je:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- eksplicitni project lifecycle i odbijanje nepoznatih statusa;
+- Danielovo obavezno final approval pravilo prije `Delivered`;
+- katalog s cijenama €50, €150, €300, €500 i €1.000;
+- immutable accepted-offer snapshot s `scopeVersion` i `acceptedAt`;
+- URL-only environment contract i `.env.example`;
+- public, client i admin route shells sa shared headerom;
+- reduced-motion CSS baseline i mobile route smoke testovi.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+U ovoj fazi nema checkouta, paymenta, live Supabasea, produkcijskih secretsa, AI API poziva, upload workflowa, autentikacije ni Katedra/Lekta/WordReplica/Drive/calendar/email integracija.
 
-## Deploy on Vercel
+## Autoritativni dokumenti
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Implementacija slijedi, ovim redom:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. `docs/superpowers/specs/2026-09-22-tvoj-pisac-design.md`
+2. `docs/superpowers/plans/2026-09-22-tvoj-pisac-master.md`
+3. `docs/superpowers/plans/2026-09-22-tvoj-pisac-foundation.md`
+
+Foundation ne izmišlja odluke koje pripadaju kasnijim fazama. Produkcijski secrets mogu se dodati tek nakon što je repozitorij privatan i nakon zasebnog odobrenja odgovarajuće faze.
+
+## Secrets
+
+Ne commitati `.env` datoteke, API ključeve, tokene, service-role ključeve, privatne certifikate ni druge credentials. Commitati se smije samo `.env.example` s placeholder vrijednostima.
