@@ -5,6 +5,10 @@ const publicRoutes = [
   { path: "/usluge", heading: "Usluge" },
   { path: "/paketi", heading: "Paketi" },
   { path: "/paketi/seminarski", heading: "Seminarski rad" },
+  { path: "/paketi/zavrsni", heading: "Završni rad" },
+  { path: "/paketi/diplomski", heading: "Diplomski/master's rad" },
+  { path: "/paketi/specijalisticki", heading: "Specijalistički rad" },
+  { path: "/paketi/doktorski", heading: "Doktorski rad" },
   { path: "/cijene", heading: "Cijene" },
 ];
 
