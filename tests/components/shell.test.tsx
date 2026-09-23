@@ -1,11 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import AdminPage from "@/app/(admin)/admin/page";
 import PortalPage from "@/app/(client)/portal/page";
+import PublicLayout from "@/app/(public)/layout";
 import PublicPage from "@/app/(public)/page";
 
 describe("route shells", () => {
   it("renders the shared product header and one main landmark", () => {
-    render(<PublicPage />);
+    render(
+      <PublicLayout>
+        <PublicPage />
+      </PublicLayout>,
+    );
 
     expect(screen.getByRole("banner")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Tvoj Pisac" })).toHaveAttribute(

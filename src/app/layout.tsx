@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Tvoj Pisac",
-  description: "Foundation aplikacije Tvoj Pisac",
+  description: "Pregledna hrvatska prezentacija usluge Tvoj Pisac u razvojnoj fazi.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
