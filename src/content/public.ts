@@ -42,7 +42,7 @@ export type PublicPackageContent = {
 };
 
 const SCOPE_NOTE =
-  "Točan opseg, rok, formati i uvjeti potvrđuju se prije prihvata ponude.";
+  "Točan opseg, rok, formati i uvjeti potvrđuju se prije prihvata ponude. Isporuke i sve materijalne izmjene opsega potvrđuju se prije prihvata ponude.";
 const PRICE_NOTE =
   "Standardna cijena vrijedi za definirani standardni paket; složeniji ili nestandardni rad ide na ručnu procjenu.";
 
@@ -107,7 +107,7 @@ export const PUBLIC_PROCESS_STEPS: readonly PublicProcessStep[] = [
   },
   {
     title: "Potvrda opsega",
-    description: "Opseg, rok, formati i uvjeti potvrđuju se prije prihvata ponude.",
+    description: SCOPE_NOTE,
   },
   {
     title: "Rad i provjera",

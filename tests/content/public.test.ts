@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 import {
   PUBLIC_ARTICLES,
   PUBLIC_EXAMPLES,
+  PUBLIC_FAQS,
   PUBLIC_PACKAGES,
+  PUBLIC_PROCESS_STEPS,
   getPublicPackageBySlug,
 } from "@/content/public";
 
@@ -27,5 +29,22 @@ describe("public content contract", () => {
     expect(PUBLIC_ARTICLES.every((article) => article.isEducational)).toBe(
       true,
     );
+  });
+
+  it("discloses deliverables and material scope changes before offer acceptance", () => {
+    const requiredDisclosure =
+      "Isporuke i sve materijalne izmjene opsega potvrđuju se prije prihvata ponude.";
+
+    expect(
+      PUBLIC_PACKAGES.every((item) => item.scopeNote.includes(requiredDisclosure)),
+    ).toBe(true);
+    expect(
+      PUBLIC_PROCESS_STEPS.some((step) =>
+        step.description.includes(requiredDisclosure),
+      ),
+    ).toBe(true);
+    expect(
+      PUBLIC_FAQS.some((faq) => faq.answer.includes(requiredDisclosure)),
+    ).toBe(true);
   });
 });
