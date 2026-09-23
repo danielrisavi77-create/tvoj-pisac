@@ -1,17 +1,16 @@
-import { AppHeader } from "@/components/shell/AppHeader";
+import { PublicCta } from "@/components/public/PublicCta";
+import { PublicPageShell } from "@/components/public/PublicPageShell";
 
 export default function PublicPage() {
   return (
-    <div className="app-shell">
-      <AppHeader surface="Foundation" />
-      <main className="surface-card">
-        <p className="eyebrow">Javni prostor</p>
-        <h1>Tvoj Pisac</h1>
-        <p>
-          Osnovni prostor za upoznavanje usluge, dogovor opsega i komunikaciju o
-          projektu.
-        </p>
-      </main>
-    </div>
+    <PublicPageShell
+      eyebrow="Javni prostor"
+      title="Tvoj Pisac"
+      intro="Osnovni prostor za upoznavanje usluge, dogovor opsega i komunikaciju o projektu."
+    >
+      <PublicCta href="/kontakt" variant="primary">
+        Zatraži ponudu
+      </PublicCta>
+    </PublicPageShell>
   );
 }
