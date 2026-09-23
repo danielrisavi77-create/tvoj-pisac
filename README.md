@@ -40,6 +40,31 @@ Implementirano je:
 
 U ovoj fazi nema checkouta, paymenta, live Supabasea, produkcijskih secretsa, AI API poziva, upload workflowa, autentikacije ni Katedra/Lekta/WordReplica/Drive/calendar/email integracija.
 
+## Public Experience granica
+
+Public Experience je pregledna, demo-spremna javna prezentacija na hrvatskom jeziku. Struktura sadržaja ostaje spremna za lokalizaciju, ali ova faza ne predstavlja plaćeno javno lansiranje.
+
+Javne rute su:
+
+- `/` — početna stranica
+- `/usluge` — usluge
+- `/paketi` i `/paketi/[slug]` — katalog i detalj paketa
+- `/cijene` — cjenik
+- `/proces` — proces rada
+- `/primjeri` — primjeri
+- `/faq` — česta pitanja
+- `/clanci` i `/clanci/[slug]` — edukativni članci
+- `/o-nama` — informacije o usluzi
+- `/kontakt` — kontaktna granica bez obrasca ili izmišljenog kanala
+
+Prikazane standardne cijene su točno: seminar €50, završni rad €150, diplomski/master's rad €300, specijalistički rad €500 i doktorski rad €1,000. Svaka cijena vrijedi samo za definirani standardni paket; opseg, isporuke, rok i materijalne promjene potvrđuju se prije prihvata ponude. Složeni, empirijski, neuobičajeno opsežni ili nestandardni radovi traže ručnu procjenu izvedivosti i prilagođenu ponudu.
+
+Primjeri nisu dokaz rada za klijenta: svaki neklijentski primjer mora biti jasno označen kao ilustrativan. Javne stranice ne izmišljaju svjedočanstva, rezultate, izvore, kvalifikacije ni portfolio dokaze. Dekorativno kretanje je samo progresivno poboljšanje; uz `prefers-reduced-motion` kretanje se smanjuje ili isključuje, a sadržaj, hijerarhija i CTA poveznice ostaju jednako dostupni.
+
+U ovoj fazi namjerno ne postoje autentikacija, slanje intake zahtjeva, uploadi, Supabase, checkout, plaćanje, AI, Katedra, Lekta, WordReplica ni druge vanjske integracije (uključujući Drive, kalendar i e-poštu). CTA poveznice ne stvaraju narudžbu, korisnički prostor ni bilo kakvu vanjsku radnju.
+
+Prije plaćenog lansiranja ostaju otvorene odluke o točnom opsegu/isporukama paketa, rokovima, revizijama i podršci, pravnom i potrošačkom tekstu, vizualnom identitetu te poslovnom kontaktnom kanalu. Te se odluke ne smiju prešutno izmišljati u javnom sadržaju.
+
 ## Autoritativni dokumenti
 
 Implementacija slijedi, ovim redom:
