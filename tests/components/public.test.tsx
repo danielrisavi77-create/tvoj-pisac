@@ -5,7 +5,13 @@ import { PublicHeader } from "@/components/public/PublicHeader";
 import PackageCard from "@/components/public/PackageCard";
 import Home from "@/app/(public)/page";
 import PackagesPage from "@/app/(public)/paketi/page";
-import { PUBLIC_PACKAGES } from "@/content/public";
+import ProcessPage from "@/app/(public)/proces/page";
+import ExamplesPage from "@/app/(public)/primjeri/page";
+import FaqPage from "@/app/(public)/faq/page";
+import ArticlesPage from "@/app/(public)/clanci/page";
+import AboutPage from "@/app/(public)/o-nama/page";
+import ContactPage from "@/app/(public)/kontakt/page";
+import { PUBLIC_FAQS, PUBLIC_PACKAGES } from "@/content/public";
 
 describe("public experience components", () => {
   it("renders the named main navigation with approved CTA links", () => {
@@ -93,5 +99,75 @@ describe("public experience components", () => {
       "href",
       "/paketi/seminarski",
     );
+  });
+
+  it("makes quality control and Daniel's final approval explicit in the process", () => {
+    render(<ProcessPage />);
+
+    expect(
+      screen.getByText("Završna kontrola kvalitete"),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText("Danielovo završno odobrenje"),
+    ).toBeInTheDocument();
+    expect(screen.getByText(/automatizirana isporuka/i)).toBeInTheDocument();
+  });
+
+  it("renders exactly three visible illustrative-example disclaimers", () => {
+    render(<ExamplesPage />);
+
+    expect(
+      screen.getAllByText(
+        "Ilustrativni primjer — nije stvarni klijentski rezultat.",
+      ),
+    ).toHaveLength(3);
+  });
+
+  it("uses native details and summary controls for each FAQ", () => {
+    const { container } = render(<FaqPage />);
+
+    expect(container.querySelectorAll("details")).toHaveLength(PUBLIC_FAQS.length);
+    expect(container.querySelectorAll("details > summary")).toHaveLength(
+      PUBLIC_FAQS.length,
+    );
+  });
+
+  it("lists the educational articles and describes Daniel-led service without proof claims", () => {
+    render(
+      <>
+        <ArticlesPage />
+        <AboutPage />
+      </>,
+    );
+
+    expect(
+      screen.getByRole("link", {
+        name: "Što pripremiti prije nego što zatražiš ponudu",
+      }),
+    ).toHaveAttribute("href", "/clanci/prije-nego-sto-zatrazi-ponudu");
+    expect(screen.getByText(/Daniel vodi Tvoj Pisac/i)).toBeInTheDocument();
+    expect(document.body.textContent).not.toMatch(
+      /tim stručnjaka|certifikat|godina iskustva|uspješan rezultat/i,
+    );
+  });
+
+  it("keeps contact static, linked internally, and explicitly disconnected", () => {
+    const { container } = render(<ContactPage />);
+
+    expect(container.querySelector("section#razgovor")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Paketi" })).toHaveAttribute(
+      "href",
+      "/paketi",
+    );
+    expect(screen.getByRole("link", { name: "Proces" })).toHaveAttribute(
+      "href",
+      "/proces",
+    );
+    expect(
+      screen.getByText(/kontaktni ili privatni unos nije povezan u ovoj fazi/i),
+    ).toBeInTheDocument();
+    expect(container.querySelector("form")).not.toBeInTheDocument();
+    expect(container.querySelector("a[href^='mailto:']")).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /pošalji/i })).not.toBeInTheDocument();
   });
 });

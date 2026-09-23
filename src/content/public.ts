@@ -102,20 +102,24 @@ export type PublicProcessStep = {
 
 export const PUBLIC_PROCESS_STEPS: readonly PublicProcessStep[] = [
   {
-    title: "Razgovor o potrebi",
-    description: "Prikupljaju se osnovne informacije o temi, cilju i očekivanom opsegu.",
+    title: "Kvalifikacija",
+    description: "U početnom razgovoru provjeravaju se tema, cilj i očekivani opseg.",
   },
   {
     title: "Potvrda opsega",
     description: SCOPE_NOTE,
   },
   {
-    title: "Rad i provjera",
-    description: "Dogovoreni materijali prolaze radnu i završnu provjeru.",
+    title: "Rad",
+    description: "Rad se odvija prema prethodno potvrđenome opsegu.",
   },
   {
-    title: "Završno odobrenje",
-    description: "Prije završetka provjerava se da isporuka odgovara potvrđenom opsegu.",
+    title: "Završna kontrola kvalitete",
+    description: "Provjerava se odgovaraju li dogovoreni materijali potvrđenome opsegu.",
+  },
+  {
+    title: "Danielovo završno odobrenje",
+    description: "Nakon kontrole kvalitete Daniel daje završno odobrenje; automatizirana isporuka se ne koristi.",
   },
 ];
 
