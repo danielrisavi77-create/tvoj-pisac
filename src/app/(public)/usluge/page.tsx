@@ -28,6 +28,10 @@ export default function ServicesPage() {
           Podrška služi razumijevanju i organizaciji vlastitog rada; korisnik
           zadržava odgovornost za svoje odluke i pravila ustanove.
         </p>
+        <p>
+          Kada se koriste, namjenski softver i alati potpomognuti umjetnom
+          inteligencijom dio su procesa uz ljudsku provjeru prije isporuke.
+        </p>
         <ul>
           {SERVICE_CATEGORIES.map((service) => (
             <li key={service.title}>

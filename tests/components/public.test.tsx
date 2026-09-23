@@ -11,6 +11,7 @@ import FaqPage from "@/app/(public)/faq/page";
 import ArticlesPage from "@/app/(public)/clanci/page";
 import AboutPage from "@/app/(public)/o-nama/page";
 import ContactPage from "@/app/(public)/kontakt/page";
+import ServicesPage from "@/app/(public)/usluge/page";
 import { PUBLIC_FAQS, PUBLIC_PACKAGES } from "@/content/public";
 
 describe("public experience components", () => {
@@ -111,6 +112,16 @@ describe("public experience components", () => {
       screen.getByText("Danielovo završno odobrenje"),
     ).toBeInTheDocument();
     expect(screen.getByText(/automatizirana isporuka/i)).toBeInTheDocument();
+  });
+
+  it("discloses software and AI assistance with human review", () => {
+    render(<ServicesPage />);
+
+    expect(
+      screen.getByText(
+        /namjenski softver i alati potpomognuti umjetnom inteligencijom.*ljudsku provjeru prije isporuke/i,
+      ),
+    ).toBeInTheDocument();
   });
 
   it("renders exactly three visible illustrative-example disclaimers", () => {
