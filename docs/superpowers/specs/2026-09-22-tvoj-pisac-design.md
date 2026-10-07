@@ -1,3 +1,5 @@
+> **Current scope update (2026-10-07):** For Tvoj Pisac's current consulting offer and first public website, the authoritative scope is `docs/superpowers/specs/2026-10-07-academic-consulting-amendment.md`. The earlier degree-level completion catalogue, delivery workflow and full client-platform architecture are historical and must not be used to sell completed assessed work.
+
 # Tvoj Pisac — Product & System Design Specification
 
 **Status:** Approved design baseline  
