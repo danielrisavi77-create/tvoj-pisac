@@ -1,3 +1,5 @@
+> **Current scope update (2026-10-07):** This master plan predates the consulting-site MVP. For the public offer, current prices, ethical boundaries and first release, follow `docs/superpowers/specs/2026-10-07-academic-consulting-amendment.md` and `docs/superpowers/plans/2026-10-07-consulting-site-mvp.md`. The client portal and commerce phases are deferred until the consulting offer is validated.
+
 # Tvoj Pisac Master Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans for each phase. Track work with checkboxes.
