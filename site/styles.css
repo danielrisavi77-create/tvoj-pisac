@@ -222,3 +222,8 @@ h1 span{color:var(--accent);font-style:italic}
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* Ensure the hero illustration fills its panel. */
+.research-map::before {
+  inset: 0;
+}
