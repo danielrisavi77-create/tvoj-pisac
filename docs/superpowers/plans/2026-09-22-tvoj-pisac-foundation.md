@@ -1,3 +1,5 @@
+> **Current scope update (2026-10-07):** This foundation plan predates the consulting-site MVP. For the public offer, current prices, ethical boundaries and first release, follow `docs/superpowers/specs/2026-10-07-academic-consulting-amendment.md` and `docs/superpowers/plans/2026-10-07-consulting-site-mvp.md`. Do not use the earlier degree-level writing catalogue for the current offer.
+
 # Tvoj Pisac Foundation Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans task-by-task. Track steps with checkboxes.
